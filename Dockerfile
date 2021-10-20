@@ -6,7 +6,7 @@ ENV PATH="/home/qhduan/.local/bin:${PATH}"
 COPY --chown=qhduan:qhduan ./requirements.txt .
 RUN pip install --upgrade --user pip -i https://mirrors.aliyun.com/pypi/simple
 RUN pip install --user -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple
-RUN pip uninstall opencv-python
+RUN pip uninstall opencv-python -y
 RUN pip install opencv-python-headless
 COPY --chown=qhduan:qhduan . .
 EXPOSE 8000
