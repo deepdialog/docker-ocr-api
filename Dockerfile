@@ -1,8 +1,8 @@
 FROM python:3.8
 RUN useradd -ms /bin/bash qhduan
 USER root
-RUN apt update
-RUN apt install libgl1-mesa-glx
+RUN apt update -y
+RUN apt install libgl1-mesa-glx -y
 USER qhduan
 WORKDIR /home/qhduan
 ENV PATH="/home/qhduan/.local/bin:${PATH}"
