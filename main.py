@@ -2,8 +2,8 @@ from paddleocr import PaddleOCR
 from fastapi import FastAPI
 from paddleocr.paddleocr import main
 import uvicorn
-ocr = PaddleOCR(use_angle_cls=True, lang="ch")
 
+ocr = PaddleOCR(use_angle_cls=True, lang="ch", use_gpu=False)
 
 app = FastAPI()
 
