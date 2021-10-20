@@ -13,8 +13,11 @@ async def root():
     return {1: 1}
 
 
-@app.post('/api/ocr/{imgpath}')
+@app.get('/api/ocr/{imgpath}')
 async def get_orc(imgpath: str):
+    """
+    curl -XGET http://localhost:8000/api/ocr/test.png
+    """
     results = ocr.ocr(imgpath, cls=True)
     text = [r[1][0] for r in results]
     return {
