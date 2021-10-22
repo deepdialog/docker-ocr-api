@@ -8,7 +8,11 @@ import uvicorn
 import io
 import numpy as np
 
-ocr = PaddleOCR(use_angle_cls=True, lang="ch", use_gpu=False)
+ocr = PaddleOCR(use_angle_cls=True, 
+    lang="ch", use_gpu=False,
+    max_text_length=50,
+    det_db_unclip_ratio=4
+)
 
 app = FastAPI()
 
