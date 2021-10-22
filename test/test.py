@@ -1,3 +1,5 @@
-from ..main import ocr
+import sys
+sys.path.append('..')
+from main import ocr
 
-print(ocr.ocr('test/test2.png', cls=True))
+ocr.ocr('test2.png', cls=True)

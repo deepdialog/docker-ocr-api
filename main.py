@@ -1,12 +1,11 @@
-from paddleocr import PaddleOCR
 from fastapi import FastAPI
-
 from starlette.requests import Request
 from PIL import Image
 import base64
 import uvicorn
 import io
 import numpy as np
+from paddleocr import PaddleOCR
 
 ocr = PaddleOCR(use_angle_cls=True, 
     lang="ch", use_gpu=False,
