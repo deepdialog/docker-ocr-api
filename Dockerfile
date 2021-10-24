@@ -8,7 +8,7 @@ COPY --chown=qhduan:qhduan ./requirements.txt .
 RUN pip install --upgrade --user pip -i https://mirrors.aliyun.com/pypi/simple
 RUN pip install --user -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple
 COPY --chown=qhduan:qhduan . .
-RUN cd test && python test/test.py
+RUN cd test && python test.py
 EXPOSE 8000
 HEALTHCHECK CMD curl --fail http://localhost:8000 || exit 1
 ENTRYPOINT ["/home/qhduan/run.sh"]

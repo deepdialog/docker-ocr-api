@@ -33,7 +33,9 @@ async def get_orc(request: Request):
     img_dec = base64.b64decode(imgb64.encode(encoding='utf-8'))
     image = io.BytesIO(img_dec)
     
-    img = np.array(Image.open(image))
+    img = Image.open(image)
+    img = img.convert("RGB")
+    img = np.array(img)
     results = ocr.ocr(img, cls=True)
     text = '\n'.join(r[1][0] for r in results)
 
